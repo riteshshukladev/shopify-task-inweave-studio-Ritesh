@@ -1,2 +1,14 @@
 {% assign products = collections.all.products %}
 {% for product in products %}
+
+  <div class="product_card" style="padding: 30px 30px; border:none">
+    <a href="{{ product.url }}">
+      <img src="{{product.featured_img}}" alt="{{product.title}}">
+      <h4 style="color:{{section.settings.text_color |  default: '#333'}}"></h4>
+    </a>
+    <p>{{product.price |  money}}</p>
+    <form action="" method="post">
+      <input type="submit" value="Add to Cart">
+    </form>
+  </div>
+  {% endfor %}
