@@ -1,7 +1,7 @@
 {% assign products = collections.all.products %}
 {% for product in products %}
-
-  <div class="product_card" style="padding: 30px 30px; border:none">
+<div class="products" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 30px; padding:0 20px;">
+  <div class="product_card" style=margin-top:36px;">
     <a href="{{ product.url }}">
       <img src="{{product.featured_image |  img_url:'300x300'}}"  alt="{{product.title}}">
       <h4 style="color:{{section.settings.text_color |  default: '#333'}}"></h4>
@@ -12,3 +12,4 @@
     </form>
   </div>
   {% endfor %}
+  </div>
