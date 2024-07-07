@@ -1,0 +1,14 @@
+{
+  "layout": "theme",
+  "sections": {
+    "main": {
+      "type": "product-cards",
+      "settings": {
+        "text_color": "#393636"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

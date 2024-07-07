@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "custom_liquid_AGLB7W": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- product-cards.liquid -->\n<div class=\"product-grid\">\n  {% assign myVar = \"Hello\" %}\n  {{myVar}}\n  {% assign products = collections.all.products %}\n  {% for product in products limit: 8 %}\n    <div class=\"product-card\" style=\"margin: 10px; padding: 10px; border: 1px solid #ddd;\">\n      <a href=\"{{ product.url }}\">\n        <img src=\"{{ product.featured_image | img_url: '300x300' }}\" alt=\"{{ product.title }}\">\n        <h2 style=\"color: {{ section.settings.text_color | default: '#333' }};\">{{ product.title }}<\/h2>\n      <\/a>\n      <p>{{ product.price | money }}<\/p>\n      <form action=\"\/cart\/add\" method=\"post\" enctype=\"multipart\/form-data\">\n        <input type=\"hidden\" name=\"id\" value=\"{{ product.variants.first.id }}\">\n        <input type=\"submit\" value=\"Add to Cart\">\n      <\/form>\n    <\/div>\n  {% endfor %}\n<\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_AGLB7W"
+  ]
+}
