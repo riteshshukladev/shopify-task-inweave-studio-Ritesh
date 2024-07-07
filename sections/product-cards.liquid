@@ -1,10 +1,12 @@
 {% assign products = collections.all.products %}
 {% for product in products %}
-<div class="products" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 30px; padding:0 20px;">
+<div class="products" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; padding:0 20px;">
   <div class="product_card" style=margin-top:36px;">
     <a href="{{ product.url }}">
-      <img src="{{product.featured_image |  img_url:'300x300'}}"  alt="{{product.title}}">
-      <h4 style="color:{{section.settings.text_color |  default: '#333'}}"></h4>
+      <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}"
+     style="max-width: 400px; max-height: 300px; height: auto; width: auto">
+
+      <h4 style=" width: 50%; margin-left: auto; margin-right: auto; margin-top:-6px color:{{section.settings.text_color |  default: '#333'}} ">{{product.title}}</h4>
     </a>
     <p>{{product.price |  money}}</p>
     <form action="" method="post">
