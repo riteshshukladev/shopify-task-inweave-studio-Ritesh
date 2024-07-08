@@ -1,3 +1,12 @@
+<header>
+<select name="" id="sort-by" onchange="location = this.value">
+  <option value="{{collection.url}}">Default Sorting</option>
+  <option value="{{collection.url | append: '?sort_by=price-ascending'}}">ascending(price)</option>
+  <option value="{{collection.url | append: '?sort_by=price-descending'}}">descending(price)</option>
+</select>
+</header>
+
+
 {% assign products = collections.all.products %}
 {% for product in products %}
 <div class="products" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; padding:0 20px;">
