@@ -2,6 +2,14 @@
 <html>
 <body>
 
+<select name="filterByPricevalue" id="filterByPricevalue" onchange="filterByPrice()">
+ <option value="all">All Price Range</option>
+ <option value="0-200">Under 200</option>
+ <option value="200-500">₹200-₹500</option>
+ <option value="500-1000">₹500-₹1000</option>
+ <option value="1000-above">Above ₹1000 </option>
+</select>
+
 
 {% assign products = collections.all.products %}
 {% for product in products %}
