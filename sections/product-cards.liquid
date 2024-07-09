@@ -2,13 +2,14 @@
 <html>
 <body>
 
-<select name="filterByPricevalue" id="filterByPricevalue" onchange="filterByPrice()">
+<select name="filterByPricevalue" id="filterByPricevalue" onchange="filterByPrice()" style="width: 200px; height: 40px; font-size: 16px; color: #333; background-color: #f9f9f9; border: 1px solid #ccc; border-radius: 5px; padding: 5px; position:absolute; right:10px; top:10px;">
  <option value="all">All Price Range</option>
  <option value="0-200">Under 200</option>
  <option value="200-500">₹200-₹500</option>
  <option value="500-1000">₹500-₹1000</option>
- <option value="1000-above">Above ₹1000 </option>
+ <option value="1000-above">Above ₹1000</option>
 </select>
+
 
 
 
@@ -60,7 +61,7 @@
       case '500-1000':
         if (price > 500 && price <= 1000) display = 'block';
         break;
-        
+
       case '1000-above':
         if (price > 1000) display = 'block';
         break;
